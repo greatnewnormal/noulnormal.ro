@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   {# SEO #}
-  <title>{{ seoTitle }}</title>
+  <title>{{ seoTitle or title }}</title>
   <meta name="description" content="{{ seoDescription }}">
   <link rel="canonical" href="{{ site.url }}{{ canonicalUrl or page.url }}">
 
@@ -20,13 +20,14 @@
 </head>
 <body class="text-gray-700 antialiased bg-white">
 
-  <header class="gnn-container py-16">
-    <p class="text-2xl">acum şi în română</p>
-    <h1 class="text-9xl font-black">Great New Normal</h1>
+  <header class="gnn-container pt-12 pb-16 bg-gray-100 shadow">
+    <h1 class="text-9xl font-black">
+      <a href="/">Noul Normal</a>
+    </h1>
     <p class="mt-2 text-2xl">Despre pandemie, frică, lockdown, izolare, noul normal. <mark>Doar din surse oficiale şi media oficială.</mark> Informaţii şi citate (aparent ascunse sau nescoase în prim plan) pentru a vedea mai clar întregul, realitatea, distopia.<br><br>"Războiul este pace, libertatea este sclavie, ignoranţa înseamnă putere." (George Orwell)<br> "Pentru ca răul să triumfe, este suficient ca oamenii buni să nu facă nimic." (Edmund Burke)</p>
   </header>
 
-  <div class="gnn-container">
+  <div class="mt-16 gnn-container">
     {{ content | safe }}
   </div>
 

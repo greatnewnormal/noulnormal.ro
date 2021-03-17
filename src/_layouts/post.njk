@@ -2,17 +2,16 @@
 layout: base
 ---
 
-{% from "components/post.njk" import renderPost %}
+<article class="mb-24">
 
-ABC2 {{ page | dump }}
+  <p class="text-gray-400">{{ date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) }}</p>
 
-{{ renderPost(page) }}
+  <h1 class="mt-1 text-4xl font-bold text-gray-500">
+      {{ title }}
+  </h1>
 
+  <main class="mt-12 prose max-w-none">
+    {{ content | safe }}
+  </main>
 
-<p>{{ srcDomain }}</p>
-<p>{{ srcSource }}</p>
-<h1 class="text-3xl">{{ srcTitle }}</h1>
-
-<main>
-  {{ content | safe }}
-</main>
+</article>
