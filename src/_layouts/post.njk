@@ -1,0 +1,18 @@
+---
+layout: base
+---
+
+{% from "components/post.njk" import renderPost %}
+
+ABC2 {{ page | dump }}
+
+{{ renderPost(page) }}
+
+
+<p>{{ srcDomain }}</p>
+<p>{{ srcSource }}</p>
+<h1 class="text-3xl">{{ srcTitle }}</h1>
+
+<main>
+  {{ content | safe }}
+</main>

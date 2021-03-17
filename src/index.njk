@@ -1,0 +1,10 @@
+---
+
+seoTitle: Great New Normal
+---
+
+{% from "components/post.njk" import renderPost %}
+
+{% for post in collections.post | reverse %}
+  {{ renderPost(post) }}
+{% endfor %}
